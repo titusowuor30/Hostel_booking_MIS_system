@@ -1,8 +1,8 @@
 ================================
-readme
+README
 ================================
 
-- after cloning the system boiler plate from git,install the system requirements using the following command,
+- after cloning the system boiler plate from github,install the system requirements using the following command,
 
 - pip install -r requirements.txt
 
@@ -14,25 +14,161 @@ database tabkes
 -customer(student/guest)
      -customer_name
      -customer_id(pk)
-     -address
      -phone
+     -profile(FK)
+     -customer_category
+
+     customer_category(guest/student)
+        -title
+        -slug
+
+Hostel_manager
+  -manager_name
+  -manager_id
+  -phone
+  -profile(FK)
+
+Profile
+   -email
+   -address
+   -phone
+   -bio
+   -course(FK)
+   -hobbies
+   -games
+   -image
+
+    customer_courses
+       -course_id
+       -course_name
 
 -Hostel
-   -name
+   -hostel_name
+   -rating(FK)
+   -branch(FK)
    -location
    -hostel_id
-   -manager_id
+   -manager(FK)
+   -caretaker(FK)
+   -images
 
 Hostel_branch
-  -hoste(FK)
   -hostel_branch_id
   -branch_name
   -location
   -manager_id
   -room
+  -images
 
 Room
-  -
+  -room_id
+  -room_type
+  -room_description
+  -room_price
+  -room_status
+  -images
+
+   Room_type
+      -title
+      -slug
+
+Booking
+   -booking_id
+   -customer_id
+   -room_id
+   -booking_date
+   -checkin_date
+   -checkout_date
+
+Employees(Caretakers)
+  -employee_id
+  -employee_name
+  -phone
+  -profile(FK)
+
+Hostel_inventory
+   hostel(FK)
+   inventory_item(FK)
+
+
+   Item
+     -item_id
+     -item_name
+     -category
+     -other(s)
+
+        item_category
+           -tile
+           -slug
+
+Payments(to be discussed further)
+  -method(FK)
+  -payment_id
+  -customer_id
+  -booking_id
+  -room_price
+  -total_payment
+  -payment_status(full/partial)
+
+     payment_method
+        -id
+        -paymentg_type
+
+Transactions
+   -transaction_id
+   -payment_id
+   -employee_id
+   -customer_id
+   -booking_id
+   -amount
+
+Reminders
+ -id
+ -subject
+ -message
+ -type(FK)
+ -date_posted
+
+     reminder_type
+       -title
+       -slug
+
+Complain
+  -complain_id
+  -customer_id(FK)
+  -type
+  -subject
+  -complain_body
+  -date_filed
+  -status(ressolved/pending)
+
+     complain_type
+       -title
+       -slug
+
+
+Announcements
+  -id
+  -type
+  -subject
+  -body
+  -date_posted
+
+     announcement_type
+       -title
+       -slug
+
+Hostel_rating
+  -ratind_id
+  -hostel_id
+  -rating_value
+
+
+settings
+  -we will define settings for our system here when we go live(to be discussed further)
+
+
+
 
 
 
